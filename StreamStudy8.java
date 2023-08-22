@@ -11,8 +11,13 @@ public class StreamStudy8 {
 
         // 각 단어의 개수를 세어서 HashMap에 저장
         Map<String, Integer> wordCountMap = wordStream.collect(
-            HashMap::new,
-            (map, word) -> map.put(word, map.getOrDefault(word, 0) + 1),
+            HashMap::new, // 객체를 만들고 new 한거임!
+            (map, word) -> map.put(word, map.getOrDefault(word, 0) + 1), 
+            // 객체를 만들었는데 HashMap 타입이고 
+            // 객체의 이름이 map 인거임
+            // map 이라는 변수가 hashmap의 키가 되는거고
+            // word 라는 애가 value 값이 되는거임
+            // 그리고 그거를 착착 넣는거지 put 으로 
             HashMap::putAll
         );
 
